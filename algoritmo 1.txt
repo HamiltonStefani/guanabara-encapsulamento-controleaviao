@@ -1,0 +1,119 @@
+Interface Controle
+
+// Metodos Abstratos
+
+publico abstrato Metodo ligar()
+publico abstrato Metodo desligar
+publico abstrato Metodo ligarPainel()
+publico abstrato Metodo desligarPainel()
+publico abstrato Metodo acelerarMais()
+publico abstrato Metodo acelerarMenos()
+publico abstrato Metodo baixarTrem()
+publico abstrato Metodo subirTrem
+
+
+
+
+FimInterface
+___________________________________________________________
+
+
+
+classe ControleAviao
+
+// Atributos
+
+privado logico voando
+privado logico pousado
+privado inteiro acelerando
+
+//Metodos Especiais
+
+publico metodo Construtor
+
+voando = falso
+pousado = true
+acelerando = 25
+
+FimMetodo
+
+privado Metodo getVoando()
+retorne voando
+FimMetodo
+
+privado Metodo getPousado()
+retorne pousando
+FimMetodo
+
+privado Metodo getAcelerando()
+retorne acelerando
+FimMetodo
+
+privado Metodo setVoando(v: logico)
+ voando = v
+ FimMetodo
+ 
+ privado Metodo setPousado(p: logico)
+ pousado = p
+ FimMetodo
+
+privado Metodo setAcelerando(a: inteiro)
+ acelerando = a
+ FimMetodo
+
+FimClasse
+
+_____________________________________________________________
+
+classe ControleAviao implementa Controle
+
+//Sobrescrevendo Métodos
+
+
+publico Metodo Ligar()
+setPousado(verdadeiro)
+FimMetodo
+
+publico Metodo Desligar()
+setPousado(falso)
+FimMetodo
+
+publico Metodo ligarPainel()
+escreva(getPousado())
+escreva(getAcelerando())
+Para i = 0 até getAcelerando() passo 5 faca
+Escreva("/")
+fimPara
+FimMetodo
+
+
+publico Metodo desligarPainel()
+Escreva ("Fechando Painel")
+FimMetodo
+
+publico Metodo acelerarMais()
+Se (getPousado()) entao 
+setAcelerando(getAcelerando() + 1)
+FimMetodo
+
+publico Metodo acelerarMenos()
+Se (getPousado()) entao 
+setAcelerando(getAcelerando() - 1)
+FimMetodo
+
+publico Metodo baixarTrem()
+Se(getVoando() e getAcelerando() > 0) entao
+getAcelerando(0)
+FimSe
+FimMetodo
+
+publico Metodo subirTrem()
+Se (getVoando() e getAcelerando() = 0) entao
+SetAcelerando(100)
+FimSe
+FimMetodo
+
+
+FimClasse
+
+
